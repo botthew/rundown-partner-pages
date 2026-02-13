@@ -104,7 +104,7 @@ export default function Home() {
                         >
                           {partner.ctaText}
                         </span>
-                        <span className="text-white/30 text-xs">
+                        <span className="text-white/50 text-xs">
                           {partner.content.length} featured articles
                         </span>
                       </div>
@@ -143,7 +143,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-white/10">
-          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
             <div className="flex items-center gap-2">
               <img src="/logos/rundown-bw.jpg" alt="The Rundown" className="w-6 h-6 rounded" />
               <span>© 2026 The Rundown AI</span>

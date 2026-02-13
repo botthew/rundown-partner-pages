@@ -32,7 +32,7 @@ export const partners: Record<string, Partner> = {
     ctaText: 'Explore',
     ctaUrl: '/partners/chatgpt-rundown',
     colors: {
-      primary: '#10A37F',
+      primary: '#0A7558',
       secondary: '#1A7F5A',
       accent: '#FFFFFF',
       text: '#FFFFFF',

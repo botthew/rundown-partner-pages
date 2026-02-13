@@ -22,10 +22,12 @@ export function RundownNav() {
         <button 
           onClick={() => setMenuOpen(!menuOpen)}
           className="w-10 h-10 bg-white rounded-lg flex flex-col items-center justify-center gap-1"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
-          <span className="w-5 h-0.5 bg-black" />
-          <span className="w-5 h-0.5 bg-black" />
-          <span className="w-5 h-0.5 bg-black" />
+          <span className="w-5 h-0.5 bg-black" aria-hidden="true" />
+          <span className="w-5 h-0.5 bg-black" aria-hidden="true" />
+          <span className="w-5 h-0.5 bg-black" aria-hidden="true" />
         </button>
       </div>
 
