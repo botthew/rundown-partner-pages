@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Rundown AI - Partner Landing Pages
+
+Customizable landing page templates for The Rundown AI newsletter sponsors and partners.
+
+## Features
+
+- **Dynamic partner pages** - Each partner gets a unique URL at `/partners/[slug]`
+- **Brand customization** - Partner colors, logos, and CTAs
+- **Content feed** - Featured guides and newsletter mentions
+- **4 layout variants** - Different hero, about, and content layouts
+- **Responsive design** - Mobile-first, works on all devices
+- **Static generation** - Fast, SEO-friendly pages
+
+## Partners
+
+| Partner | URL | Layout Style |
+|---------|-----|--------------|
+| ChatGPT | `/partners/chatgpt` | Gradient hero, feature about, card grid |
+| Higgsfield AI | `/partners/higgsfield` | Split hero, card about, timeline feed |
+| Suno | `/partners/suno` | Default hero, inline about, card grid |
+| Claude Code | `/partners/claude-code` | Minimal hero, card about, list feed |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding a New Partner
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Add partner data to `src/lib/partners.ts`
+2. Choose layout variants in `src/app/partners/[slug]/page.tsx`
+3. Add logo to `public/logos/`
+4. Deploy!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Static Site Generation
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── page.tsx              # Homepage with partner index
+│   ├── layout.tsx            # Root layout
+│   ├── globals.css           # Global styles
+│   └── partners/
+│       └── [slug]/
+│           └── page.tsx      # Dynamic partner page
+├── components/
+│   ├── Hero.tsx              # Hero section (4 variants)
+│   ├── About.tsx             # About section (4 variants)
+│   ├── ContentFeed.tsx       # Content list (4 variants)
+│   └── Footer.tsx            # Footer
+└── lib/
+    └── partners.ts           # Partner data + types
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Ready for deployment to:
+- Vercel (zero config)
+- Fly.io
+- Any Node.js hosting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built for [The Rundown AI](https://therundown.ai) newsletter.
