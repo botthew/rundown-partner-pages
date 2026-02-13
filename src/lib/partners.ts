@@ -28,7 +28,7 @@ export const partners: Record<string, Partner> = {
     name: 'ChatGPT x Rundown',
     tagline: 'AI insights for professionals',
     description: 'Exclusive partnership between ChatGPT and The Rundown AI newsletter. Get daily AI updates and expert ChatGPT strategies tailored for professionals.',
-    logo: '/logos/rundown-bw.jpg',
+    logo: '/logos/chatgpt-green.jpg',
     ctaText: 'Explore',
     ctaUrl: '/partners/chatgpt-rundown',
     colors: {
