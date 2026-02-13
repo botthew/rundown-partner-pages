@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getPartner, getAllPartnerSlugs } from '@/lib/partners';
-import { Hero, About, ContentFeed, Footer } from '@/components';
+import { Hero, About, ContentFeed, Footer, TryAPrompt } from '@/components';
 import { Metadata } from 'next';
 
 // Layout variant mapping for each partner
@@ -51,6 +51,7 @@ export default async function PartnerPage({ params }: { params: Promise<{ slug: 
     <main className="min-h-screen">
       <Hero partner={partner} variant={variants.hero} />
       <About partner={partner} variant={variants.about} />
+      {slug === 'chatgpt' && <TryAPrompt />}
       <ContentFeed partner={partner} variant={variants.content} />
       <Footer partner={partner} />
     </main>
