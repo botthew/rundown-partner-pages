@@ -10,9 +10,11 @@ export function RundownNav() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="https://therundown.ai" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-black font-bold text-xl">R</span>
-          </div>
+          <img 
+            src="/logos/rundown-bw.jpg" 
+            alt="The Rundown" 
+            className="w-10 h-10 rounded-lg object-cover"
+          />
           <span className="text-white font-semibold text-lg">The Rundown</span>
         </a>
 

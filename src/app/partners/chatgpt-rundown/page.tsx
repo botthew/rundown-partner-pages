@@ -41,8 +41,8 @@ export default function ChatGPTRundownPage() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Partner badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
-            <div className="w-6 h-6 rounded bg-[#10A37F] flex items-center justify-center text-white text-xs font-bold">G</div>
-            <span className="text-sm text-white/80">Official ChatGPT Partner</span>
+            <img src="/logos/chatgpt-green.jpg" alt="ChatGPT" className="w-6 h-6 rounded object-cover" />
+            <span className="text-sm text-white/80">Official Rundown Partner</span>
           </div>
           
           {/* Main headline */}
@@ -143,9 +143,7 @@ export default function ChatGPTRundownPage() {
       <footer className="py-12 px-6 bg-black border-t border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold">R</span>
-            </div>
+            <img src="/logos/rundown-bw.jpg" alt="The Rundown" className="w-8 h-8 rounded-lg object-cover" />
             <span className="text-white/60 text-sm">
               © 2026 The Rundown AI. ChatGPT is a trademark of OpenAI.
             </span>
