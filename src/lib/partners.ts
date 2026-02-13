@@ -23,17 +23,42 @@ export interface Partner {
 }
 
 export const partners: Record<string, Partner> = {
+  'chatgpt-rundown': {
+    slug: 'chatgpt-rundown',
+    name: 'ChatGPT x Rundown',
+    tagline: 'AI insights for professionals',
+    description: 'Exclusive partnership between ChatGPT and The Rundown AI newsletter. Get daily AI updates and expert ChatGPT strategies tailored for professionals.',
+    logo: '/logos/rundown-bw.jpg',
+    ctaText: 'Explore',
+    ctaUrl: '/partners/chatgpt-rundown',
+    colors: {
+      primary: '#10A37F',
+      secondary: '#1A7F5A',
+      accent: '#FFFFFF',
+      text: '#FFFFFF',
+      background: '#0D0D0D',
+    },
+    content: [
+      {
+        title: 'ChatGPT x Rundown: Your Daily AI Newsletter',
+        type: 'newsletter',
+        date: '2026-02-13',
+        excerpt: 'Get the best AI insights delivered daily with expert commentary from The Rundown.',
+        url: '#',
+      },
+    ],
+  },
   chatgpt: {
     slug: 'chatgpt',
     name: 'ChatGPT',
     tagline: 'The AI assistant that helps you get more done',
     description: 'ChatGPT is an AI-powered assistant developed by OpenAI that can help you write, learn, brainstorm, and more. With its advanced language capabilities, ChatGPT has become the go-to tool for millions of professionals and creators worldwide.',
-    logo: '/logos/chatgpt.svg',
+    logo: '/logos/openai.png',
     ctaText: 'Try ChatGPT Free',
     ctaUrl: 'https://chat.openai.com',
     colors: {
-      primary: '#10A37F',
-      secondary: '#1A7F5A',
+      primary: '#040404',
+      secondary: '#7c7c7c',
       accent: '#FFFFFF',
       text: '#FFFFFF',
       background: '#0D0D0D',
@@ -65,17 +90,17 @@ export const partners: Record<string, Partner> = {
   higgsfield: {
     slug: 'higgsfield',
     name: 'Higgsfield AI',
-    tagline: 'Create stunning AI videos in seconds',
+    tagline: 'AI-powered Platform for Creators by Creators',
     description: 'Higgsfield AI is a next-generation video creation platform that uses AI to transform your ideas into professional-quality videos. Perfect for marketers, creators, and teams who want to produce engaging video content without the complexity.',
-    logo: '/logos/higgsfield.svg',
+    logo: '/logos/higgsfield.png',
     ctaText: 'Start Creating Free',
     ctaUrl: 'https://higgsfield.ai',
     colors: {
-      primary: '#7C3AED',
-      secondary: '#5B21B6',
-      accent: '#F3E8FF',
+      primary: '#d2f914',
+      secondary: '#647c14',
+      accent: '#d2f914',
       text: '#FFFFFF',
-      background: '#0F0F0F',
+      background: '#171714',
     },
     content: [
       {
@@ -104,17 +129,17 @@ export const partners: Record<string, Partner> = {
   suno: {
     slug: 'suno',
     name: 'Suno',
-    tagline: 'Make music with AI in seconds',
+    tagline: 'From your mind to music',
     description: 'Suno is the breakthrough AI music platform that lets anyone create original songs with just a text prompt. Whether you\'re a professional musician or have never played an instrument, Suno helps you bring your musical ideas to life.',
-    logo: '/logos/suno.svg',
+    logo: '/logos/suno.png',
     ctaText: 'Create Music Free',
     ctaUrl: 'https://suno.ai',
     colors: {
-      primary: '#F97316',
-      secondary: '#EA580C',
-      accent: '#FED7AA',
+      primary: '#fbad09',
+      secondary: '#fb5a2b',
+      accent: '#fbad09',
       text: '#FFFFFF',
-      background: '#18181B',
+      background: '#040404',
     },
     content: [
       {
@@ -145,15 +170,15 @@ export const partners: Record<string, Partner> = {
     name: 'Claude Code',
     tagline: 'Your AI pair programmer that ships',
     description: 'Claude Code by Anthropic is an agentic coding tool that lives in your terminal. It can understand your codebase, write features, fix bugs, and handle complex refactors—all while explaining its reasoning. Built on Claude\'s industry-leading safety and capability.',
-    logo: '/logos/claude-code.svg',
+    logo: '/logos/claude.png',
     ctaText: 'Get 20% Off',
     ctaUrl: 'https://claude.ai/code',
     colors: {
-      primary: '#DA7756',
-      secondary: '#C4694B',
-      accent: '#F5E6D3',
-      text: '#1A1A1A',
-      background: '#F5E6D3',
+      primary: '#d16c51',
+      secondary: '#7c7474',
+      accent: '#f1e7e5',
+      text: '#191918',
+      background: '#f2ebea',
     },
     content: [
       {

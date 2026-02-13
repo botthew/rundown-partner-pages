@@ -21,6 +21,11 @@ export function Footer({ partner }: FooterProps) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+              <img 
+                src="/logos/rundown-bw.jpg" 
+                alt="The Rundown" 
+                className="w-8 h-8 rounded-lg object-cover"
+              />
               <span className="text-2xl font-bold" style={{ color: colors.text }}>
                 The Rundown AI
               </span>

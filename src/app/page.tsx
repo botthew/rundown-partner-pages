@@ -1,18 +1,28 @@
 import Link from 'next/link';
 import { partners } from '@/lib/partners';
+import { RundownNav } from '@/components/RundownNav';
 
 export default function Home() {
   const partnerList = Object.values(partners);
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* Header */}
-      <header className="py-8 px-6 border-b border-white/10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-bold">The Rundown AI</h1>
-          <span className="text-sm text-white/50">Partner Landing Pages</span>
-        </div>
-      </header>
+    <>
+      <RundownNav />
+      <main className="min-h-screen bg-[#0A0A0A] text-white pt-20">
+        {/* Header */}
+        <header className="py-8 px-6 border-b border-white/10">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logos/rundown-bw.jpg" 
+                alt="The Rundown" 
+                className="w-8 h-8 rounded"
+              />
+              <h1 className="text-2xl font-bold">The Rundown AI</h1>
+            </div>
+            <span className="text-sm text-white/50">Partner Landing Pages</span>
+          </div>
+        </header>
 
       {/* Hero */}
       <section className="py-20 px-6 text-center">
@@ -71,12 +81,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/10 mt-20">
-        <div className="max-w-6xl mx-auto text-center text-white/40 text-sm">
-          <p>© 2026 The Rundown AI. Partner landing page templates.</p>
-        </div>
-      </footer>
-    </main>
+        {/* Footer */}
+        <footer className="py-12 px-6 border-t border-white/10 mt-20">
+          <div className="max-w-6xl mx-auto text-center text-white/40 text-sm">
+            <p>© 2026 The Rundown AI. Partner landing page templates.</p>
+          </div>
+        </footer>
+      </main>
+    </>
   );
 }
