@@ -7,13 +7,39 @@ interface HeroProps {
   variant?: 'default' | 'gradient' | 'split' | 'minimal';
 }
 
+// Helper to determine if a color is light or dark
+function isLightColor(hex: string): boolean {
+  const c = hex.replace('#', '');
+  const r = parseInt(c.substring(0, 2), 16);
+  const g = parseInt(c.substring(2, 4), 16);
+  const b = parseInt(c.substring(4, 6), 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.5;
+}
+
 export function Hero({ partner, variant = 'default' }: HeroProps) {
   const { name, tagline, ctaText, ctaUrl, colors, logo } = partner;
 
-  // Base styles that all variants share
+  // Ensure button text has proper contrast - always white text on colored buttons
   const ctaButtonStyle = {
     backgroundColor: colors.primary,
-    color: colors.accent,
+    color: isLightColor(colors.primary) ? '#000000' : '#FFFFFF',
+  };
+
+  // Logo component to avoid repetition
+  const LogoImage = ({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) => {
+    const sizeClasses = {
+      sm: 'w-14 h-14',
+      md: 'w-20 h-20',
+      lg: 'w-24 h-24',
+    };
+    return (
+      <img 
+        src={logo} 
+        alt={`${name} logo`} 
+        className={`${sizeClasses[size]} rounded-2xl object-cover`}
+      />
+    );
   };
 
   if (variant === 'gradient') {
@@ -31,9 +57,7 @@ export function Hero({ partner, variant = 'default' }: HeroProps) {
         <div className="relative z-10 text-center px-6 max-w-4xl grid md:grid-cols-2 gap-8 items-center">
           <div>
             <div className="mb-8 flex justify-center">
-              <div className="w-24 h-24 rounded-2xl flex items-center justify-center text-4xl font-bold" style={{ backgroundColor: colors.primary, color: colors.accent }}>
-                {name[0]}
-              </div>
+              <LogoImage size="lg" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: colors.text }}>
               {name}
@@ -72,8 +96,8 @@ export function Hero({ partner, variant = 'default' }: HeroProps) {
       >
         <div className="flex items-center justify-center p-12 md:p-20">
           <div className="max-w-xl">
-            <div className="mb-6 w-16 h-16 rounded-xl flex items-center justify-center text-2xl font-bold" style={{ backgroundColor: colors.primary, color: colors.accent }}>
-              {name[0]}
+            <div className="mb-6">
+              <LogoImage size="md" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: colors.text }}>
               {name}
@@ -132,8 +156,8 @@ export function Hero({ partner, variant = 'default' }: HeroProps) {
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
-            <div className="mb-6 inline-flex w-14 h-14 rounded-lg items-center justify-center text-xl font-bold" style={{ backgroundColor: colors.primary, color: colors.accent }}>
-              {name[0]}
+            <div className="mb-6 inline-flex">
+              <LogoImage size="sm" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.text }}>
               {name}
@@ -162,9 +186,7 @@ export function Hero({ partner, variant = 'default' }: HeroProps) {
     >
       <div className="max-w-4xl text-center">
         <div className="mb-8 flex justify-center">
-          <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold" style={{ backgroundColor: colors.primary, color: colors.accent }}>
-            {name[0]}
-          </div>
+          <LogoImage size="lg" />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: colors.text }}>
           {name}

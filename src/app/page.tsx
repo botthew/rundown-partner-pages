@@ -2,6 +2,16 @@ import Link from 'next/link';
 import { partners } from '@/lib/partners';
 import { RundownNav } from '@/components/RundownNav';
 
+// Helper to determine if a color is light or dark
+function isLightColor(hex: string): boolean {
+  const c = hex.replace('#', '');
+  const r = parseInt(c.substring(0, 2), 16);
+  const g = parseInt(c.substring(2, 4), 16);
+  const b = parseInt(c.substring(4, 6), 16);
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.5;
+}
+
 export default function Home() {
   const partnerList = Object.values(partners);
 
@@ -9,20 +19,6 @@ export default function Home() {
     <>
       <RundownNav />
       <main className="min-h-screen bg-[#0A0A0A] text-white pt-20">
-        {/* Header */}
-        <header className="py-8 px-6 border-b border-white/10">
-          <div className="max-w-6xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/logos/rundown-bw.jpg" 
-                alt="The Rundown" 
-                className="w-8 h-8 rounded"
-              />
-              <h1 className="text-2xl font-bold">The Rundown AI</h1>
-            </div>
-            <span className="text-sm text-white/50">Partner Landing Pages</span>
-          </div>
-        </header>
 
       {/* Hero */}
       <section className="py-20 px-6 text-center">
@@ -49,12 +45,11 @@ export default function Home() {
                 className="group block p-8 rounded-2xl border border-white/10 transition-all hover:border-white/30 hover:bg-white/5"
               >
                 <div className="flex items-start gap-4">
-                  <div 
-                    className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold shrink-0"
-                    style={{ backgroundColor: partner.colors.primary, color: partner.colors.accent }}
-                  >
-                    {partner.name[0]}
-                  </div>
+                  <img 
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className="w-14 h-14 rounded-xl object-cover shrink-0"
+                  />
                   <div className="flex-1 min-w-0">
                     <h4 className="text-xl font-semibold mb-1 group-hover:underline">
                       {partner.name}
@@ -65,7 +60,10 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <span 
                         className="px-3 py-1 rounded-full text-xs font-medium"
-                        style={{ backgroundColor: partner.colors.primary, color: partner.colors.accent }}
+                        style={{ 
+                          backgroundColor: partner.colors.primary, 
+                          color: isLightColor(partner.colors.primary) ? '#000000' : '#FFFFFF' 
+                        }}
                       >
                         {partner.ctaText}
                       </span>
